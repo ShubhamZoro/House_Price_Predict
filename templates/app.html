@@ -1,0 +1,37 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    
+   
+    <h1 style="text-align:center ; margin-top:2%"> Predict House Price of Banglore</h1>
+    <div class="container" style="padding-top:3%; padding-left:15%">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+            {% if tru %}
+                    <h3 > Estimated Price: {{price}}
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    
+    
+            
+                
+          
+
+    
+
+</body>
+
+</html>
+{% endblock %}
